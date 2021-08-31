@@ -1,5 +1,6 @@
 package eu.senla.ecabtask.producer.controller.exceptionhandler;
 
+import eu.senla.ecabtask.exception.BookingNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,7 @@ public class ECabExceptionHandler {
     }
 
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler(BookingNotFoundException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     protected void handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpStatus status) {
 

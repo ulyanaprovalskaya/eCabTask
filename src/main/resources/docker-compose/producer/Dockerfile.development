@@ -1,4 +1,0 @@
-FROM openjdk:8
-WORKDIR /usr/local/producer
-ADD eCab_producer.jar producer.jar
-CMD java -jar ./producer.jar

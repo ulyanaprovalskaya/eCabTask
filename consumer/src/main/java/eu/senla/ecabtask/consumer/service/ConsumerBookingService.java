@@ -4,6 +4,7 @@ import eu.senla.ecabtask.api.service.BookingService;
 import eu.senla.ecabtask.consumer.model.Booking;
 import eu.senla.ecabtask.consumer.repository.BookingRepository;
 import eu.senla.ecabtask.dto.BookingDto;
+import eu.senla.ecabtask.exception.BookingNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -34,6 +35,7 @@ public class ConsumerBookingService implements BookingService {
             log.debug("RECORD WAS UPDATED: id=" + result.getId());
         } else {
             log.error("RECORD WASN'T FOUND: id=" + booking.getId());
+            throw new BookingNotFoundException("There is no booking with id=" + booking.getId());
         }
     }
 
@@ -44,6 +46,7 @@ public class ConsumerBookingService implements BookingService {
             log.debug("RECORD WAS DELETED: id=" + id);
         } else {
             log.error("Record WASN'T FOUND: id=" + id);
+            throw new BookingNotFoundException("There is no booking with id=" + id);
         }
     }
 }

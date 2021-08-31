@@ -23,13 +23,14 @@
         <module>consumer</module>
         <module>service-api</module>
         <module>dto</module>
+        <module>exception</module>
     </modules>
 
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
+            <version>1.18.20</version>
         </dependency>
     </dependencies>
 
