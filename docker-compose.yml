@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 services:
   rabbitmq:
     image: rabbitmq:3-management
@@ -19,6 +19,7 @@ services:
       - SPRING_RABBITMQ_HOST=rabbitmq
     depends_on:
       - rabbitmq
+    restart: on-failure
 
   consumer:
     build:
