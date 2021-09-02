@@ -1,9 +1,9 @@
-###Start startup.sh to run the app
+Start startup.sh to run the app
 
-####Request example
-`POST http://localhost:9000/booking`
+Request example:
+POST http://localhost:9000/booking
 
-`{
+{
 "passenger": {
 "name": "name",
 "contactNumber": "12345678"
@@ -28,4 +28,4 @@
 "longitude": 33.123123
 }
 ]
-}`
+}
