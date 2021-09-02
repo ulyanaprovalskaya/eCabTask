@@ -2,15 +2,10 @@ package eu.senla.ecabtask.producer.controller.exceptionhandler;
 
 import eu.senla.ecabtask.exception.BookingNotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @ControllerAdvice
 @Slf4j
