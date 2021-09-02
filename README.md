@@ -1,9 +1,11 @@
 ### Start startup.sh to run the app
 
 #### Request example
+
 `POST http://localhost:9000/booking`
 
-```json {
+```json 
+{
 "passenger": {
 "name": "name",
 "contactNumber": "12345678"
