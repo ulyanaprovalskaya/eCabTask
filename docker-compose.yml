@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.8'
 services:
   rabbitmq:
     image: rabbitmq:3-management
@@ -10,20 +10,18 @@ services:
   producer:
     build:
       context: producer
-      dockerfile: Dockerfile
+      dockerfile: producer/Dockerfile.development
     container_name: eCab_producer
     image: 'ecab_producer'
     ports:
       - "9000:9000"
-    environment:
-      - SPRING_RABBITMQ_HOST=rabbitmq
     depends_on:
       - rabbitmq
 
   consumer:
     build:
       context: consumer
-      dockerfile: Dockerfile
+      dockerfile: consumer/Dockerfile.development
     container_name: eCab_consumer
     image: 'ecab_consumer'
     ports:
