@@ -24,13 +24,8 @@ public class ECabExceptionHandler {
 
 
     @ExceptionHandler(BookingNotFoundException.class)
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    protected void handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpStatus status) {
-
-        List<String> errors = ex.getBindingResult()
-                .getFieldErrors()
-                .stream()
-                .map(DefaultMessageSourceResolvable::getDefaultMessage)
-                .collect(Collectors.toList());
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    protected void handleMethodArgumentNotValid(BookingNotFoundException exception) {
+        log.error("BOOKING NOT FOUND: " + exception.getMessage());
     }
 }
