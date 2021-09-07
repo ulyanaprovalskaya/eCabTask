@@ -2,7 +2,7 @@
 
 #### Request example
 
-`POST http://localhost:9000/booking`
+`POST http://localhost:9000/bookings
 
 ```json 
 {
